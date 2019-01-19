@@ -1,11 +1,26 @@
+# User-specific stuff:
+.idea/**/tasks.xml
 .idea/*
+
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+# Gradle:
 
 *.iml
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+/local.properties*
 .DS_Store
 /build
 /captures
 .externalNativeBuild
+app/app-release.apk
+data/schemas/org.refunite.refunetapp.data.sql.RefuniteDatabase/
+app/offlineFirst/release/
+app/offlineFirst/debug/
