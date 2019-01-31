@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 
 import android.os.AsyncTask;
@@ -10,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 
 import com.example.jokeui.JokeActivity;
@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         new JokesAsyncTask().execute();
     }
 
+
+    @SuppressLint("StaticFieldLeak")
     class JokesAsyncTask extends AsyncTask<Void, Void, String> {
         private JokesApi jokesApi = null;
 
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             if(jokesApi == null) {
                 JokesApi.Builder builder = new JokesApi.Builder(AndroidHttp.newCompatibleTransport(),
                         new AndroidJsonFactory(), null)
-                        .setRootUrl("http://192.168.43.157:8080/_ah/api/")
+                        .setRootUrl(Constants.API_ROOT_URL)
                         .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                             @Override
                             public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) {
